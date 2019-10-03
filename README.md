@@ -1,4 +1,7 @@
 # generator-simple-node-project-generator [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/richrdkng/generator-simple-nodejs-project.svg)](https://greenkeeper.io/)
+
 > A basic Yeoman generator for simple Node.js modules and projects.
 
 ## Installation
