@@ -20,6 +20,9 @@
     "envs": [],
     "globals": []
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "gulp": "gulp --gulpfile script/gulp/config.js",
     "dev": "echo \"DEV\"",

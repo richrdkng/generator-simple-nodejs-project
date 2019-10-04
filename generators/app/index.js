@@ -8,6 +8,24 @@ const yosay = require('yosay')
 const pkg = require('../../package.json')
 
 module.exports = class extends Generator {
+  constructor (args, opts) {
+    super(args, opts)
+
+    this._devDependencies = [
+      // install semantic-release
+      'semantic-release',
+      '@semantic-release/changelog',
+
+      // install gulp
+      'gulp',
+      'gulp-debug',
+
+      // install standard
+      'standard',
+      'snazzy'
+    ]
+  }
+
   prompting () {
     // greeting
     this.log(yosay(`Welcome to the mighty ${chalk.red.bold(pkg.name)}!`, { maxLength: 40 }))
@@ -87,10 +105,12 @@ module.exports = class extends Generator {
     const config = this.fs.readJSON(this.templatePath('_releaserc'))
 
     if (this.props.semanticRelease.includes('includeNpmPlugin')) {
+      this._devDependencies.push('@semantic-release/npm')
       config.plugins.push('@semantic-release/npm')
     }
 
     if (this.props.semanticRelease.includes('includeExecPlugin')) {
+      this._devDependencies.push('@semantic-release/exec')
       config.plugins.push([
         '@semantic-release/exec', {
           // eslint-disable-next-line
@@ -107,23 +127,7 @@ module.exports = class extends Generator {
   }
 
   install () {
-    const devDependencies = [
-      // install semantic-release
-      'semantic-release',
-      '@semantic-release/changelog',
-      '@semantic-release/git',
-      '@semantic-release/exec',
-
-      // install gulp
-      'gulp',
-      'gulp-debug',
-
-      // install standard
-      'standard',
-      'snazzy'
-    ]
-
-    this.npmInstall(devDependencies, { 'save-dev': true })
+    this.npmInstall(this._devDependencies, { 'save-dev': true })
   }
 
   _copy (file, template) {
