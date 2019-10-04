@@ -1,16 +1,16 @@
 'use strict'
 
 const path = require('path')
-const pkg = require('../../package.json')
-
 const Generator = require('yeoman-generator')
 const chalk = require('chalk')
 const yosay = require('yosay')
 
+const pkg = require('../../package.json')
+
 module.exports = class extends Generator {
   prompting () {
     // greeting
-    this.log(yosay(`Welcome to the mighty ${chalk.red(pkg.name)}!`, { maxLength: 40 }))
+    this.log(yosay(`Welcome to the mighty ${chalk.red.bold(pkg.name)}!`, { maxLength: 40 }))
 
     const prompts = [
       {
@@ -18,13 +18,43 @@ module.exports = class extends Generator {
         name: 'name',
         message: 'package name:',
         default: '@scope/name'
+      },
+      {
+        type: 'checkbox',
+        name: 'features',
+        message: 'directories:',
+        choices: [
+          {
+            name: 'media',
+            value: 'copyMediaDir',
+            checked: true
+          }
+        ]
+      },
+      {
+        type: 'checkbox',
+        name: 'semanticRelease',
+        message: 'semantic-release:',
+        choices: [
+          {
+            name: '@semantic-release/npm plugin',
+            value: 'includeNpmPlugin',
+            checked: true
+          },
+          {
+            name: '@semantic-release/exec plugin',
+            value: 'includeExecPlugin',
+            checked: true
+          }
+        ]
       }
     ]
 
     return this.prompt(prompts).then(props => { this.props = props })
   }
 
-  writing () {
+  async writing () {
+    // process project name
     const fullName = this.props.name
     const [scope, barename] = fullName.split('/')
 
@@ -38,6 +68,11 @@ module.exports = class extends Generator {
     this._copy('script/gulp/utils/_gitkeep')
     this._copy('script/gulp/config.js')
 
+    // handle media dir
+    if (this.props.features.copyMediaDir) {
+      this._copy('media/_gitkeep')
+    }
+
     this._copy('src/_gitkeep')
     this._copy('test/_gitkeep')
 
@@ -46,8 +81,25 @@ module.exports = class extends Generator {
     this._copy('_gitignore')
     this._copy('_npmignore')
     this._copy('_nvmrc')
-    this._copy('_releaserc')
     this._copy('_travis.yml')
+
+    // handle .releaserc
+    const config = this.fs.readJSON(this.templatePath('_releaserc'))
+
+    if (this.props.semanticRelease.includeNpmPlugin) {
+      config.plugins.push('@semantic-release/npm')
+    }
+
+    if (this.props.semanticRelease.includeExecPlugin) {
+      config.plugins.push([
+        '@semantic-release/exec', {
+          // eslint-disable-next-line
+          successCmd: 'export SEMANTIC_RELEASE_NEXT_RELEASE_VERSION=\"${nextRelease.version}\" && npm run build && npm run deploy'
+        }
+      ])
+    }
+
+    this.fs.writeJSON(this.destinationPath('.releaserc'), config, null, 2)
 
     this._copy('LICENSE.md')
     this._copy('package.json', template)

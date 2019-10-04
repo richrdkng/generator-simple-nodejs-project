@@ -4,10 +4,6 @@
     "@semantic-release/release-notes-generator",
     "@semantic-release/changelog",
     "@semantic-release/github",
-    "@semantic-release/git",
-    "@semantic-release/npm",
-    ["@semantic-release/exec", {
-      "successCmd": "export SEMANTIC_RELEASE_NEXT_RELEASE_VERSION=\"${nextRelease.version}\" && npm run build && npm run deploy"
-    }]
+    "@semantic-release/git"
   ]
 }

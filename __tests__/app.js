@@ -8,7 +8,16 @@ describe('generator-simple-nodejs-project:app', () => {
   beforeAll(() => {
     return helpers
       .run(path.join(__dirname, '../generators/app'))
-      .withPrompts({ name: '@custom/package' })
+      .withPrompts({
+        name: '@custom/package',
+        features: {
+          copyMediaDir: true
+        },
+        semanticRelease: {
+          includeNpmPlugin: true,
+          includeExecPlugin: true
+        }
+      })
   })
 
   it('creates files', () => {
@@ -19,6 +28,7 @@ describe('generator-simple-nodejs-project:app', () => {
     ])
 
     assert.file([
+      'media/.gitkeep',
       'src/.gitkeep',
       'test/.gitkeep'
     ])
@@ -46,5 +56,10 @@ describe('generator-simple-nodejs-project:app', () => {
 
     assert.fileContent('README.md', /# @custom\/package/)
     assert.fileContent('README.md', /\[url-license-doc\]: https:\/\/github.com\/custom\/package\/blob\/master\/LICENSE.md/)
+  })
+
+  it('has the semantic-release config', () => {
+    assert.fileContent('.releaserc', /"@semantic-release\/npm"/)
+    assert.fileContent('.releaserc', /"@semantic-release\/exec"/)
   })
 })
