@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/richrdkng/generator-simple-nodejs-project/compare/v1.2.0...v1.2.1) (2019-10-04)
+
+
+### Bug Fixes
+
+* **options:** fix options parsing ([4e635e0](https://github.com/richrdkng/generator-simple-nodejs-project/commit/4e635e0))
+
 # [1.2.0](https://github.com/richrdkng/generator-simple-nodejs-project/compare/v1.1.0...v1.2.0) (2019-10-04)
 
 
