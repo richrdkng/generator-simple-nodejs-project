@@ -8,7 +8,7 @@ describe('generator-simple-nodejs-project:app', () => {
   beforeAll(() => {
     return helpers
       .run(path.join(__dirname, '../generators/app'))
-      .withPrompts({ someAnswer: true })
+      .withPrompts({ name: '@custom/package' })
   })
 
   it('creates files', () => {
@@ -38,5 +38,13 @@ describe('generator-simple-nodejs-project:app', () => {
       'package.json',
       'README.md'
     ])
+  })
+
+  it('has the content', () => {
+    assert.fileContent('package.json', /"name": "@custom\/package"/)
+    assert.fileContent('package.json', /"homepage": "https:\/\/github.com\/custom\/package#readme"/)
+
+    assert.fileContent('README.md', /# @custom\/package/)
+    assert.fileContent('README.md', /\[url-license-doc\]: https:\/\/github.com\/custom\/package\/blob\/master\/LICENSE.md/)
   })
 })

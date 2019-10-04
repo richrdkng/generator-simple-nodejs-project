@@ -12,24 +12,28 @@ module.exports = class extends Generator {
     // greeting
     this.log(yosay(`Welcome to the mighty ${chalk.red(pkg.name)}!`, { maxLength: 40 }))
 
-    /*
     const prompts = [
       {
-        type: 'confirm',
-        name: 'someAnswer',
-        message: 'Would you like to enable this option?',
-        default: true
+        type: 'input',
+        name: 'name',
+        message: 'package name:',
+        default: '@scope/name'
       }
     ]
 
-    return this.prompt(prompts).then(props => {
-      // To access props later use this.props.someAnswer;
-      this.props = props
-    })
-    */
+    return this.prompt(prompts).then(props => { this.props = props })
   }
 
   writing () {
+    const fullName = this.props.name
+    const [scope, barename] = fullName.split('/')
+
+    const template = {
+      name: fullName,
+      user: scope.substring(1), // remove the leading @
+      repo: barename
+    }
+
     this._copy('script/gulp/tasks/_gitkeep')
     this._copy('script/gulp/utils/_gitkeep')
     this._copy('script/gulp/config.js')
@@ -46,8 +50,8 @@ module.exports = class extends Generator {
     this._copy('_travis.yml')
 
     this._copy('LICENSE.md')
-    this._copy('package.json')
-    this._copy('README.md')
+    this._copy('package.json', template)
+    this._copy('README.md', template)
   }
 
   install () {
@@ -70,7 +74,7 @@ module.exports = class extends Generator {
     this.npmInstall(devDependencies, { 'save-dev': true })
   }
 
-  _copy (file) {
+  _copy (file, template) {
     const basename = path.basename(file)
 
     let destFile = file
@@ -80,9 +84,17 @@ module.exports = class extends Generator {
       destFile = path.dirname(file) + '/.' + basename.substring(1)
     }
 
-    this.fs.copy(
-      this.templatePath(file),
-      this.destinationPath(destFile)
-    )
+    if (template) {
+      this.fs.copyTpl(
+        this.templatePath(file),
+        this.destinationPath(destFile),
+        template
+      )
+    } else {
+      this.fs.copy(
+        this.templatePath(file),
+        this.destinationPath(destFile)
+      )
+    }
   }
 }

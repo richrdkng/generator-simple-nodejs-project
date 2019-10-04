@@ -22,11 +22,6 @@ cache:
 notifications:
   email: false
 
-stages:
-  - test
-  - name: release
-    if: branch = master
-
 jobs:
   include:
     - stage: test
@@ -35,8 +30,13 @@ jobs:
         - npm test
 
     - stage: release
+      script:
+        - echo "skipping tests"
+
       deploy:
         skip_cleanup: true
         provider: script
         script:
           - npx semantic-release
+        on:
+          branch: master

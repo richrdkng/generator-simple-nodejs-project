@@ -1,4 +1,4 @@
-# name
+# <%= name %>
 
 ## Contribution
 
@@ -14,5 +14,5 @@
   <!--- Badges -->
 
   <!--- URLs -->
-  [url-license-doc]: https://github.com/@user/@repo/blob/master/LICENSE.md
-  [url-contrib-doc]: https://github.com/@user/@repo/blob/master/.github/CONTRIBUTING.md
+  [url-license-doc]: https://github.com/<%= user %>/<%= repo %>/blob/master/LICENSE.md
+  [url-contrib-doc]: https://github.com/<%= user %>/<%= repo %>/blob/master/.github/CONTRIBUTING.md

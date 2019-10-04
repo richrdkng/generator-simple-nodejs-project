@@ -1,16 +1,16 @@
 {
-  "name": "name",
+  "name": "<%= name %>",
   "version": "0.0.0-development",
   "description": "",
   "author": "Richard King <richrdkng@gmail.com> (www.richrdkng.com)",
   "license": "ISC",
-  "homepage": "https://github.com/@user/@repo#readme",
+  "homepage": "https://github.com/<%= user %>/<%= repo %>#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/@user/@repo.git"
+    "url": "git+https://github.com/<%= user %>/<%= repo %>.git"
   },
   "bugs": {
-    "url": "https://github.com/@user/@repo/issues"
+    "url": "https://github.com/<%= user %>/<%= repo %>/issues"
   },
   "keywords": [],
   "engines": {
