@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/richrdkng/generator-simple-nodejs-project/compare/v1.2.1...v1.2.2) (2019-10-04)
+
+
+### Bug Fixes
+
+* **options:** fix devDependency injections during options ([c3635b6](https://github.com/richrdkng/generator-simple-nodejs-project/commit/c3635b6))
+
 ## [1.2.1](https://github.com/richrdkng/generator-simple-nodejs-project/compare/v1.2.0...v1.2.1) (2019-10-04)
 
 
