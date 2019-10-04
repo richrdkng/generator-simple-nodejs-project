@@ -1,14 +1,14 @@
 {
-  "name": "@richrdkng/generator-simple-nodejs-project",
+  "name": "@richrdkng/simple-nodejs-project-generator",
   "version": "0.0.0-development",
   "description": "A basic Yeoman generator for simple Node.js modules and projects.",
-  "homepage": "https://github.com/richrdkng/generator-simple-nodejs-project#readme",
+  "homepage": "https://github.com/richrdkng/simple-nodejs-project-generator#readme",
   "author": {
     "name": "Richard King",
     "email": "richrdkng@gmail.com",
     "url": "https://www.richrdkng.com"
   },
-  "repository": "git@github.com:richrdkng/generator-simple-nodejs-project.git",
+  "repository": "git@github.com:richrdkng/simple-nodejs-project-generator.git",
   "license": "ISC",
   "files": [
     "generators"

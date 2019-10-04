@@ -1,21 +1,13 @@
-# generator-simple-nodejs-project
+# @richrdkng/simple-nodejs-project-generator
 
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+
 > A basic Yeoman generator for simple Node.js modules and projects.
 
-## Installation
-
-First, install [Yeoman](http://yeoman.io) and generator-simple-node-project-generator using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
+## Usage
 
 ```bash
-npm install -g yo
-npm install -g generator-simple-node-project-generator
-```
-
-Then generate your new project:
-
-```bash
-yo simple-node-project-generator
+npm init yo @richrdkng/simple-nodejs-project-generator
 ```
 
 ## Getting To Know Yeoman
