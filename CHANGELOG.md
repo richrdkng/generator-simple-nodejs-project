@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/richrdkng/generator-simple-nodejs-project/compare/v1.0.3...v1.0.4) (2019-10-04)
+
+
+### Bug Fixes
+
+* remove unneded dependencies ([281894b](https://github.com/richrdkng/generator-simple-nodejs-project/commit/281894b))
+
 ## [1.0.3](https://github.com/richrdkng/generator-simple-nodejs-project/compare/v1.0.2...v1.0.3) (2019-10-04)
 
 
