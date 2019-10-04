@@ -5,8 +5,8 @@ const path = require('path')
 const fs = require('fs-extra')
 const ci = require('is-ci')
 const execa = require('execa')
-const getVersion = require('./get-version-from-env')
-const isVersionValid = require('./is-version-valid')
+// const getVersion = require('./get-version-from-env')
+// const isVersionValid = require('./is-version-valid')
 
 const root = path.join(__dirname, '../../../')
 
