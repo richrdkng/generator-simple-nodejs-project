@@ -67,7 +67,7 @@ module.exports = class extends Generator {
       'snazzy'
     ]
 
-    devDependencies.forEach(dep => this.npmInstall(dep, { 'save-dev': true }))
+    this.npmInstall(devDependencies, { 'save-dev': true })
   }
 
   _copy (file) {

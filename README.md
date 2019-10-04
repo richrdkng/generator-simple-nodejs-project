@@ -11,7 +11,7 @@ npm install -g @richrdkng/generator-simple-nodejs-project
 ## Usage
 
 ```bash
-yo @richrdkng/generator-simple-nodejs-project
+yo @richrdkng/simple-nodejs-project
 ```
 
 ## License
