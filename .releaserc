@@ -7,7 +7,7 @@
     "@semantic-release/git",
     "@semantic-release/npm",
     ["@semantic-release/exec", {
-      "successCmd": "export SEMANTIC_RELEASE_NEXT_RELEASE_VERSION=\"${nextRelease.version}\" && npm run yo:fix"
+      "successCmd": "npm run yo:fix"
     }]
   ]
 }

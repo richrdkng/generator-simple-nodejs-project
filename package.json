@@ -52,7 +52,6 @@
     "is-ci": "^2.0.0",
     "jest": "^24.8.0",
     "semantic-release": "^15.13.24",
-    "semver": "^6.3.0",
     "snazzy": "^8.0.0",
     "standard": "^14.3.1",
     "yeoman-assert": "^3.1.0",
