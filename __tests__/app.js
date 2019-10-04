@@ -10,13 +10,12 @@ describe('generator-simple-nodejs-project:app', () => {
       .run(path.join(__dirname, '../generators/app'))
       .withPrompts({
         name: '@custom/package',
-        features: {
-          copyMediaDir: true
-        },
-        semanticRelease: {
-          includeNpmPlugin: true,
-          includeExecPlugin: true
-        }
+        directories: [
+          'copyMediaDir'
+        ],
+        semanticRelease: [
+          'includeNpmPlugin', 'includeExecPlugin'
+        ]
       })
   })
 

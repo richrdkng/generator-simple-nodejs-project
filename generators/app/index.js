@@ -21,7 +21,7 @@ module.exports = class extends Generator {
       },
       {
         type: 'checkbox',
-        name: 'features',
+        name: 'directories',
         message: 'directories:',
         choices: [
           {
@@ -69,7 +69,7 @@ module.exports = class extends Generator {
     this._copy('script/gulp/config.js')
 
     // handle media dir
-    if (this.props.features.copyMediaDir) {
+    if (this.props.directories.includes('copyMediaDir')) {
       this._copy('media/_gitkeep')
     }
 
@@ -86,11 +86,11 @@ module.exports = class extends Generator {
     // handle .releaserc
     const config = this.fs.readJSON(this.templatePath('_releaserc'))
 
-    if (this.props.semanticRelease.includeNpmPlugin) {
+    if (this.props.semanticRelease.includes('includeNpmPlugin')) {
       config.plugins.push('@semantic-release/npm')
     }
 
-    if (this.props.semanticRelease.includeExecPlugin) {
+    if (this.props.semanticRelease.includes('includeExecPlugin')) {
       config.plugins.push([
         '@semantic-release/exec', {
           // eslint-disable-next-line
