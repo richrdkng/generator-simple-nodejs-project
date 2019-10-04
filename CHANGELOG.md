@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/richrdkng/generator-simple-nodejs-project/compare/v1.1.0...v1.2.0) (2019-10-04)
+
+
+### Features
+
+* **options:** add initial generator options ([3fc728d](https://github.com/richrdkng/generator-simple-nodejs-project/commit/3fc728d))
+
 # [1.1.0](https://github.com/richrdkng/generator-simple-nodejs-project/compare/v1.0.5...v1.1.0) (2019-10-04)
 
 
