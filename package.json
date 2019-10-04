@@ -31,10 +31,8 @@
     "yeoman-generator"
   ],
   "scripts": {
-    "gulp": "gulp --gulpfile script/gulp/config.js",
     "lint": "standard --verbose | snazzy",
-    "test": "jest",
-    "yo:fix": "npm run --silent gulp -- yo:fix"
+    "test": "jest"
   },
   "dependencies": {
     "yeoman-generator": "^2.0.1",
@@ -43,13 +41,8 @@
   },
   "devDependencies": {
     "@semantic-release/changelog": "^3.0.4",
-    "@semantic-release/exec": "^3.3.7",
     "@semantic-release/git": "^7.0.16",
     "acorn": "^7.1.0",
-    "execa": "^2.0.5",
-    "fs-extra": "^8.1.0",
-    "gulp": "^4.0.2",
-    "is-ci": "^2.0.0",
     "jest": "^24.8.0",
     "semantic-release": "^15.13.24",
     "snazzy": "^8.0.0",

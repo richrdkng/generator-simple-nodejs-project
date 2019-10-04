@@ -9,10 +9,8 @@ const yosay = require('yosay')
 
 module.exports = class extends Generator {
   prompting () {
-    // Have Yeoman greet the user.
-    this.log(
-      yosay(`Welcome to the mighty ${chalk.red(pkg.name)}!`)
-    )
+    // greeting
+    this.log(yosay(`Welcome to the mighty ${chalk.red(pkg.name)}!`, { maxLength: 40 }))
 
     /*
     const prompts = [
@@ -53,29 +51,23 @@ module.exports = class extends Generator {
   }
 
   install () {
-    // install semantic-release
-    this._installDevDependency([
+    const devDependencies = [
+      // install semantic-release
       'semantic-release',
       '@semantic-release/changelog',
-      '@semantic-release/commit-analyzer',
-      '@semantic-release/exec',
       '@semantic-release/git',
-      '@semantic-release/github',
-      '@semantic-release/npm',
-      '@semantic-release/release-notes-generator'
-    ])
+      '@semantic-release/exec',
 
-    // install gulp
-    this._installDevDependency([
+      // install gulp
       'gulp',
-      'gulp-debug'
-    ])
+      'gulp-debug',
 
-    // install standard
-    this._installDevDependency([
+      // install standard
       'standard',
       'snazzy'
-    ])
+    ]
+
+    devDependencies.forEach(dep => this.npmInstall(dep, { 'save-dev': true }))
   }
 
   _copy (file) {
@@ -92,9 +84,5 @@ module.exports = class extends Generator {
       this.templatePath(file),
       this.destinationPath(destFile)
     )
-  }
-
-  _installDevDependency (...deps) {
-    deps.forEach(dep => this.npmInstall(dep, { 'save-dev': true }))
   }
 }

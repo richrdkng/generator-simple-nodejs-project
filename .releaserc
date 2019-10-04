@@ -5,9 +5,6 @@
     "@semantic-release/changelog",
     "@semantic-release/github",
     "@semantic-release/git",
-    "@semantic-release/npm",
-    ["@semantic-release/exec", {
-      "successCmd": "npm run yo:fix"
-    }]
+    "@semantic-release/npm"
   ]
 }
