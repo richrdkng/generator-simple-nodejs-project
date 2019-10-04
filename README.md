@@ -1,4 +1,6 @@
-# generator-simple-node-project-generator [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+# generator-simple-nodejs-project
+
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 > A basic Yeoman generator for simple Node.js modules and projects.
 
 ## Installation

@@ -1,0 +1,33 @@
+{
+  "name": "name",
+  "version": "0.0.0-development",
+  "description": "",
+  "author": "Richard King <richrdkng@gmail.com> (www.richrdkng.com)",
+  "license": "ISC",
+  "homepage": "https://github.com/@user/@repo#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/@user/@repo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/@user/@repo/issues"
+  },
+  "keywords": [],
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "standard": {
+    "envs": [],
+    "globals": []
+  },
+  "scripts": {
+    "gulp": "gulp --gulpfile script/gulp/config.js",
+    "dev": "echo \"DEV\"",
+    "test": "echo \"TEST\"",
+    "build": "echo \"BUILD\"",
+    "lint": "standard --verbose | snazzy",
+    "deploy": "npm run --silent gulp -- deploy"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

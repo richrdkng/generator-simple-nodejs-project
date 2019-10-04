@@ -2,17 +2,17 @@ language: node_js
 
 node_js:
   - lts/*
-  # - node
-  # - 12
-  # - 11
-  # - 10
-  # - 9
-  # - 8
+  - node
+  - 12
+  - 11
+  - 10
+  - 9
+  - 8
 
 os:
   - linux
-  # - osx
-  # - windows
+  - osx
+  - windows
 
 sudo: false
 
