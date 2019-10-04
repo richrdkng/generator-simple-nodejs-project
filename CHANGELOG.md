@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/richrdkng/generator-simple-nodejs-project/compare/v1.0.5...v1.1.0) (2019-10-04)
+
+
+### Features
+
+* **prompt:** add package name prompt ([ce399dc](https://github.com/richrdkng/generator-simple-nodejs-project/commit/ce399dc))
+
 ## [1.0.5](https://github.com/richrdkng/generator-simple-nodejs-project/compare/v1.0.4...v1.0.5) (2019-10-04)
 
 
