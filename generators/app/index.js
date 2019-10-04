@@ -1,5 +1,6 @@
 'use strict'
 
+const path = require('path')
 const Generator = require('yeoman-generator')
 const chalk = require('chalk')
 const yosay = require('yosay')
@@ -29,16 +30,24 @@ module.exports = class extends Generator {
   }
 
   writing () {
-    this.fs.copy(
-      this.templatePath('**/*'),
-      this.destinationRoot(),
-      { globOptions: { dot: true } }
-    )
+    this._copy('script/gulp/tasks/_gitkeep')
+    this._copy('script/gulp/utils/_gitkeep')
+    this._copy('script/gulp/config.js')
 
-    this.fs.copy(
-      this.templatePath('\\.*'),
-      this.destinationRoot()
-    )
+    this._copy('src/_gitkeep')
+    this._copy('test/_gitkeep')
+
+    this._copy('_editorconfig')
+    this._copy('_gitattributes')
+    this._copy('_gitignore')
+    this._copy('_npmignore')
+    this._copy('_nvmrc')
+    this._copy('_releaserc')
+    this._copy('_travis.yml')
+
+    this._copy('LICENSE.md')
+    this._copy('package.json')
+    this._copy('README.md')
   }
 
   install () {
@@ -65,6 +74,22 @@ module.exports = class extends Generator {
       'snazzy',
       'standard'
     ])
+  }
+
+  _copy (file) {
+    const basename = path.basename(file)
+
+    let destFile = file
+
+    // replace _ with a . if the file is a leading-underscored file (e.g.: _gitkeep => .gitkeep)
+    if (basename.startsWith('_')) {
+      destFile = path.dirname(file) + '/.' + basename.substring(1)
+    }
+
+    this.fs.copy(
+      this.templatePath(file),
+      this.destinationPath(destFile)
+    )
   }
 
   _installDevDependency (...deps) {
