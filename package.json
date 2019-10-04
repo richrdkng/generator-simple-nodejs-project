@@ -1,14 +1,14 @@
 {
-  "name": "@richrdkng/simple-nodejs-project-generator",
+  "name": "@richrdkng/generator-simple-nodejs-project",
   "version": "0.0.0-development",
   "description": "A basic Yeoman generator for simple Node.js modules and projects.",
-  "homepage": "https://github.com/richrdkng/simple-nodejs-project-generator#readme",
+  "homepage": "https://github.com/richrdkng/generator-simple-nodejs-project#readme",
   "author": {
     "name": "Richard King",
     "email": "richrdkng@gmail.com",
     "url": "https://www.richrdkng.com"
   },
-  "repository": "git@github.com:richrdkng/simple-nodejs-project-generator.git",
+  "repository": "git@github.com:richrdkng/generator-simple-nodejs-project.git",
   "license": "ISC",
   "files": [
     "generators"
@@ -31,8 +31,10 @@
     "yeoman-generator"
   ],
   "scripts": {
+    "gulp": "gulp --gulpfile script/gulp/config.js",
     "lint": "standard --verbose | snazzy",
-    "test": "jest"
+    "test": "jest",
+    "yo:fix": "npm run --silent gulp -- yo:fix"
   },
   "dependencies": {
     "yeoman-generator": "^2.0.1",
@@ -41,13 +43,15 @@
   },
   "devDependencies": {
     "@semantic-release/changelog": "^3.0.4",
-    "@semantic-release/commit-analyzer": "^6.3.0",
     "@semantic-release/git": "^7.0.16",
-    "@semantic-release/github": "^5.5.0",
-    "@semantic-release/npm": "^5.2.0",
-    "@semantic-release/release-notes-generator": "^7.3.0",
+    "acorn": "^7.1.0",
+    "execa": "^2.0.5",
+    "fs-extra": "^8.1.0",
+    "gulp": "^4.0.2",
+    "is-ci": "^2.0.0",
     "jest": "^24.8.0",
     "semantic-release": "^15.13.24",
+    "semver": "^6.3.0",
     "snazzy": "^8.0.0",
     "standard": "^14.3.1",
     "yeoman-assert": "^3.1.0",

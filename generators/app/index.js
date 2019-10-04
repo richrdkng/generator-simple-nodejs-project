@@ -1,6 +1,8 @@
 'use strict'
 
 const path = require('path')
+const pkg = require('../../package.json')
+
 const Generator = require('yeoman-generator')
 const chalk = require('chalk')
 const yosay = require('yosay')
@@ -9,7 +11,7 @@ module.exports = class extends Generator {
   prompting () {
     // Have Yeoman greet the user.
     this.log(
-      yosay(`Welcome to the shining ${chalk.red('generator-simple-nodejs-project')} generator!`)
+      yosay(`Welcome to the mighty ${chalk.red(pkg.name)}!`)
     )
 
     /*
@@ -53,14 +55,14 @@ module.exports = class extends Generator {
   install () {
     // install semantic-release
     this._installDevDependency([
+      'semantic-release',
       '@semantic-release/changelog',
       '@semantic-release/commit-analyzer',
       '@semantic-release/exec',
       '@semantic-release/git',
       '@semantic-release/github',
       '@semantic-release/npm',
-      '@semantic-release/release-notes-generator',
-      'semantic-release'
+      '@semantic-release/release-notes-generator'
     ])
 
     // install gulp
@@ -71,8 +73,8 @@ module.exports = class extends Generator {
 
     // install standard
     this._installDevDependency([
-      'snazzy',
-      'standard'
+      'standard',
+      'snazzy'
     ])
   }
 
@@ -93,6 +95,6 @@ module.exports = class extends Generator {
   }
 
   _installDevDependency (...deps) {
-    this.npmInstall(deps, { 'save-dev': true })
+    deps.forEach(dep => this.npmInstall(dep, { 'save-dev': true }))
   }
 }

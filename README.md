@@ -1,4 +1,4 @@
-# @richrdkng/simple-nodejs-project-generator
+# @richrdkng/generator-simple-nodejs-project
 
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 
@@ -7,7 +7,7 @@
 ## Usage
 
 ```bash
-npm init yo @richrdkng/simple-nodejs-project-generator
+npm init yo @richrdkng/generator-simple-nodejs-project
 ```
 
 ## Getting To Know Yeoman
