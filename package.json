@@ -36,19 +36,19 @@
   },
   "dependencies": {
     "yeoman-generator": "^4.1.0",
-    "chalk": "^2.1.0",
-    "yosay": "^2.0.1"
+    "chalk": "^2.4.2",
+    "yosay": "^2.0.2"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^3.0.4",
     "@semantic-release/git": "^7.0.16",
     "acorn": "^7.1.0",
-    "jest": "^24.8.0",
+    "jest": "^24.9.0",
     "semantic-release": "^15.13.24",
     "snazzy": "^8.0.0",
     "standard": "^14.3.1",
-    "yeoman-assert": "^3.1.0",
-    "yeoman-test": "^1.7.0"
+    "yeoman-assert": "^3.1.1",
+    "yeoman-test": "^2.0.0"
   },
   "jest": {
     "testEnvironment": "node"
