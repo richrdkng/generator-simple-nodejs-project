@@ -2,16 +2,12 @@
 
 A basic, opinionated Yeoman generator **for simple Node.js modules and projects** by [@richrdkng][url-richrdkng].
 
-## Install
-
-```bash
-npm install -g @richrdkng/generator-simple-nodejs-project
-```
-
 ## Usage
 
 ```bash
-yo @richrdkng/simple-nodejs-project
+npm i -g @richrdkng/generator-simple-nodejs-project && \
+npx yo @richrdkng/simple-nodejs-project && \
+npm un -g @richrdkng/generator-simple-nodejs-project
 ```
 
 ## License
