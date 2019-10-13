@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/richrdkng/generator-simple-nodejs-project/compare/v1.2.2...v1.3.0) (2019-10-13)
+
+
+### Features
+
+* **readme:** simplify generator usage ([56eef45](https://github.com/richrdkng/generator-simple-nodejs-project/commit/56eef45))
+
 ## [1.2.2](https://github.com/richrdkng/generator-simple-nodejs-project/compare/v1.2.1...v1.2.2) (2019-10-04)
 
 
