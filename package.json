@@ -43,7 +43,7 @@
     "@semantic-release/changelog": "^3.0.4",
     "@semantic-release/git": "^7.0.16",
     "acorn": "^7.1.0",
-    "jest": "^24.9.0",
+    "jest": "^25.4.0",
     "semantic-release": "^15.13.24",
     "snazzy": "^8.0.0",
     "standard": "^14.3.1",
