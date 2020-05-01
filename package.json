@@ -40,7 +40,7 @@
     "yosay": "^2.0.2"
   },
   "devDependencies": {
-    "@semantic-release/changelog": "^3.0.4",
+    "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/git": "^7.0.16",
     "acorn": "^7.1.0",
     "jest": "^25.5.3",
