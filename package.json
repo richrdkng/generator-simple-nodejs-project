@@ -44,7 +44,7 @@
     "@semantic-release/git": "^7.0.16",
     "acorn": "^7.1.0",
     "jest": "^25.5.3",
-    "semantic-release": "^15.13.24",
+    "semantic-release": "^17.2.3",
     "snazzy": "^8.0.0",
     "standard": "^14.3.1",
     "yeoman-assert": "^3.1.1",
