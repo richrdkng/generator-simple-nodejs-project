@@ -1,0 +1,22 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: monthly
+    time: "04:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: yeoman-generator
+    versions:
+    - 4.12.0
+    - 4.13.0
+  - dependency-name: yeoman-test
+    versions:
+    - 4.0.0
+  - dependency-name: npm
+    versions:
+    - 6.14.10
+  - dependency-name: acorn
+    versions:
+    - 8.0.4
